@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import Cattags from './Cattags'
 
 const Shopitem = ({data}) => {
     let item = data;
@@ -20,11 +20,14 @@ const Shopitem = ({data}) => {
 
                 <aside className="media-container">
                     {item.media.map((imgs) => (
-                        <img src={"http://localhost:1337" + imgs.url}/>
+                        <img src={"http://localhost:1337" + imgs.url} alt={imgs.alternativeText} key={imgs.id}/>
                     ))}
                 </aside>
                 
                 <article className="block-text">
+                    <div className="tags">
+                        {item.categories.map((cat) => (<Cattags catname={cat.name} key={cat.id}/>))}
+                    </div>
                     <p>{item.description}</p>
                 </article>
             </div>

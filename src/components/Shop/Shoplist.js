@@ -1,5 +1,4 @@
 import Shopitem from './Shopitem'
-import {useState, useEffect} from 'react'
 
 const Shoplist = ({shopitems}) => {
     let items = shopitems;
